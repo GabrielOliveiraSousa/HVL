@@ -88,7 +88,11 @@ pra instalar os pacotes necessários:
 
   pip install -r requirements.txt
 
+Com pacotes instalados, rode o programa:
 
+  python3 firebaseDBTEST.py
+
+  (obs.: eu ainda não tenho certeza de como usar todos os comandos, toda vez que alguém roda isso, cria-se dois usuários no firebase com IDs únicos. fica à vontade pra deletar por código ou manualmente no site.)
 
 Glossário
 
