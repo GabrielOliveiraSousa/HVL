@@ -94,6 +94,11 @@ Com pacotes instalados, rode o programa:
 
   (obs.: eu ainda não tenho certeza de como usar todos os comandos, toda vez que alguém roda isso, cria-se dois usuários no firebase com IDs únicos. fica à vontade pra deletar por código ou manualmente no site.)
 
+CUSTOMTKINTER
+Para instalar o custom tkinter precisa apenas executar este comando
+  pip install customtkinter
+E pronto, agora será possíver ver as telas criadas
+
 Glossário
 
 cd:
