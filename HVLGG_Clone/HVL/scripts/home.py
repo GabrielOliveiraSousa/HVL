@@ -80,6 +80,7 @@ def HomePage(ConnectedUser, data, ref):
     Output_Frame = ctk.CTkScrollableFrame(root, width=450, height=200, fg_color="#1B1A1E")
     Output_Frame.pack(pady=10,padx=10, fill="both", expand=True)
 
+    ListNumber = 0
 
     ListNumber = AddItem(1, ListNumber, data)
 
