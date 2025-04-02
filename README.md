@@ -55,6 +55,8 @@ os proximos pushs podem ser só:
   git push origin NomeDaBranch
 
 
+
+
 Pra rodar o DB:
 
 Abre o vscode e o terminal do vscode. Olha o prompt, se você não estiver na pasta, chega nela usando cd e digite:
@@ -88,11 +90,25 @@ pra instalar os pacotes necessários:
 
   pip install -r requirements.txt
 
-Com pacotes instalados, rode o programa:
+Para criar uma secretAccountKey e acessar o Firebase:
+
+Acesse https://console.firebase.google.com/u/1/project/hvlgg1/overview?hl=pt-br
+
+No canto superior esquerdo, logo abaixo do ícone do firebase, clique na Engrenagem e em "Configurações do Projeto".
+
+Em "Contas de serviço", você tem a opção de gerar uma nova chave.
+Selecione a Linguagem "Python", clique em "Gerar nova chave privada".
+Renomeie esse arquivo para "secretAccountKey.json".
+
+Agora é só trocar a secretAccountKey que você tem no projeto pela que você acabou de gerar.
+
+Com pacotes instalados e sua própria secretAccountKey, rode o programa:
 
   python3 firebaseDBTEST.py
 
   (obs.: eu ainda não tenho certeza de como usar todos os comandos, toda vez que alguém roda isso, cria-se dois usuários no firebase com IDs únicos. fica à vontade pra deletar por código ou manualmente no site.)
+
+
 
 CUSTOMTKINTER
 Para instalar o custom tkinter precisa apenas executar este comando
