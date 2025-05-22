@@ -8,7 +8,7 @@ def Login(authData, UsersData):
             root.result = authData
         root.quit()
         root.destroy()
-
+    # Validação
     def findUser(Username, Password):
         return next((user for user in UsersData if user['name'] == Username and user['password'] == Password), False)
 

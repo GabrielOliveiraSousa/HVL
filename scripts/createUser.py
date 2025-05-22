@@ -6,12 +6,16 @@ def CreateUser_Window(ref):
     def Confirmation():
         name = Name_Input.get()
         birthDate = BirthDate_Input.get()
-        student = Checkbox_Value.get()
         getGender = Gender_Input.get()
         gender = getGender[0]
 
         if validation(name, birthDate):
-            newData = {"nwUser": {"full_name": name, "date_of_birth": birthDate, "student": student, "gender": gender}}
+            newData = {
+                "nwUser": {
+                    "full_name": name,
+                    "date_of_birth": birthDate,
+                    "role": "student",
+                    "gender": gender}}
             for key, value in newData.items():
                 ref.push().set(newData["nwUser"])
             CreateUser_root.result = newData

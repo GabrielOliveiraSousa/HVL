@@ -1,7 +1,9 @@
-from scripts.home import HomePage
+from scripts.adminHome import adminHomePage
+from scripts.teacherHome import teacherHomePage
+from scripts.studentHome import studentHomePage
 from scripts.cadastro import Cadastro
 from scripts.login import Login
-import firebase_admin
+import firebase_admin 
 from firebase_admin import db
 cred_obj = firebase_admin.credentials.Certificate('scripts/serviceAccountKey.json')
 default_app = firebase_admin.initialize_app(cred_obj, {
@@ -13,15 +15,16 @@ ref = db.reference('pythonFirebaseDbTest/Users')
 Data = ref.get()
 
 UsersData = [
-    {"name":"Teste", "age":35, "telephone":"11 123456789", "password":"Teste", "gender": "M"},
-    {"name":"James159", "age":23, "telephone":"22 546787945", "password":"15961a", "gender": "M"}
+     {"name":"Teste", "age":35, "telephone":"11 123456789", "password":"Teste", "gender": "M"},
 ]
 
 # Open login window
 authData = [
     {"login":True, "signUp":False, "repeat":True},
-    {"name":'', "age":0, "telephone":'', "password":'', "gender":''}
+    {"name":'', "age":0, "telephone":'', "password":'', "gender":'', "role":''}
 ]
+
+
 
 def Connect(authData): 
     authProcess = {"login":True, "signUp":False, "repeat":True}
@@ -41,5 +44,12 @@ def Connect(authData):
 user = Connect(authData)
 
 # Open the homepage 
-if user.get('name') and user.get('name') != "nda":
-    HomePage(user, Data, ref)
+if user.get('name'):
+    teacherHomePage(user, Data, ref)
+    root.mainloop();
+elif user.get('role') == "teacher":
+    teacherHomePage(user, Data, ref)
+elif user.get('role') == "student":
+    studentHomePage(user,Data, ref)
+    
+    # if user.get('name') and user.get('name') != "nda":
