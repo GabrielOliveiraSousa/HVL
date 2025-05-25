@@ -35,7 +35,7 @@ def TeacherGrades_Window(student_data, ref):
     for i in range(6):
         grades_frame.grid_columnconfigure(i, weight=0, minsize=80)
 
-    # Avaliações (agora com 2 colunas por avaliação)
+    # Avaliações (com 2 colunas por avaliação)
     assessments = [
         {"name": "Prova 1", "row": 0, "col": 0},
         {"name": "Prova 2", "row": 0, "col": 4},
@@ -74,7 +74,7 @@ def TeacherGrades_Window(student_data, ref):
         weight_entry.grid(row=row, column=assessment["col"]+3, sticky="w")
         weight_vars.append({"name": assessment["name"], "var": weight_var})
     
-    # Função para salvar as notas (mantida igual)
+    # Função para salvar as notas
     def save_grades():
         try:
             grades_to_save = {}
@@ -138,11 +138,14 @@ def TeacherGrades_Window(student_data, ref):
     )
     exit_button.pack(side="right", padx=10)
     
-    # Feedback
+    # Feedback para o professor (se de certo ou não etc)
     feedback_label = ctk.CTkLabel(main_frame, text="", height=20)
     feedback_label.pack()
     
     return root
+
+'''
+comando para testar a tela
 
 if __name__ == "__main__":
     app = ctk.CTk()
@@ -163,3 +166,5 @@ if __name__ == "__main__":
     
     TeacherGrades_Window(aluno_exemplo, None)
     app.mainloop()
+
+    '''
