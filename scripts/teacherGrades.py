@@ -2,6 +2,8 @@ import customtkinter as ctk
 from datetime import datetime
 
 def TeacherGrades_Window(student_data, ref):
+    
+    
     root = ctk.CTkToplevel()
     root.title("Gerenciamento de Notas")
     root.geometry("600x500")

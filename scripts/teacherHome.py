@@ -1,5 +1,7 @@
 import customtkinter as ctk
 from scripts.listStudents import listStudents_Window
+from scripts.teacherListPage import teacherList
+from scripts.teacherGrades import TeacherGrades_Window
 
 def teacherHomePage(ConnectedUsed, data, ref):
     
@@ -9,6 +11,9 @@ def teacherHomePage(ConnectedUsed, data, ref):
     listData = [
         "Nome", "Idade", "Curso", "Nota"
     ]
+    
+    # Não tenho ideia se lsitStudents() e goToSTudents() fazem algo aqui - Hostins Vitor
+    
     
     def boolVerify(val):
         return str(val).strip().lower() == "true"
@@ -27,15 +32,14 @@ def teacherHomePage(ConnectedUsed, data, ref):
         #         CreateData()
         #     else:
         #         return
-            
-        
 
-    
-    
     def goToStudents():
         btn_listStudents = ctk.CTkButton(root, text="Listar Alunos", command=listStudents, fg_color="#025604", hover_color="#027506", font=('Arial',12))
         btn_send.grid(row=0, column=1, padx=10)
         root.destroy()
+        
+        
+        
         
         
     root = ctk.CTk()
@@ -46,9 +50,11 @@ def teacherHomePage(ConnectedUsed, data, ref):
     top_frame.grid_columnconfigure((0,1,2), weight=1, uniform="a")  # distribuir igualmente
 
     def btn1_action():
+        teacherList()
         print("Botão 1 clicado")
 
     def btn2_action():
+        TeacherGrades_Window(listStudents(), ref)
         print("Botão 2 clicado")
 
     def btn3_action():

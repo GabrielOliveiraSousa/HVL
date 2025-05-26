@@ -46,7 +46,6 @@ user = Connect(authData)
 # Open the homepage 
 if user.get('name'):
     teacherHomePage(user, Data, ref)
-    root.mainloop();
 elif user.get('role') == "teacher":
     teacherHomePage(user, Data, ref)
 elif user.get('role') == "student":
