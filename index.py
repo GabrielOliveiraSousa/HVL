@@ -15,7 +15,10 @@ ref = db.reference('pythonFirebaseDbTest/Users')
 Data = ref.get()
 
 UsersData = [
-     {"name":"Teste", "age":35, "telephone":"11 123456789", "password":"Teste", "gender": "M"},
+     {"name":"Teste", "age":35, "telephone":"11 123456789", "password":"Teste", "gender": "M", "role":"student"},
+    {"name":"aluno", "age":16, "telephone":"11 123456789", "password":"aluno", "gender": "M", "role":"student"},
+    {"name":"professor", "age":35, "telephone":"11 123456789", "password":"professor", "gender": "M", "role":"teacher"},
+    {"name":"admin", "age":35, "telephone":"11 123456789", "password":"admin", "gender": "M", "role":"admin"}
 ]
 
 # Open login window
@@ -44,11 +47,13 @@ def Connect(authData):
 user = Connect(authData)
 
 # Open the homepage 
-if user.get('name'):
-    teacherHomePage(user, Data, ref)
-elif user.get('role') == "teacher":
+'''if user.get('name'):
+    teacherHomePage(user, Data, ref)'''
+if user.get('role') == "teacher":
     teacherHomePage(user, Data, ref)
 elif user.get('role') == "student":
-    studentHomePage(user,Data, ref)
+    studentHomePage(user, Data, ref)
+elif user.get('role')=="admin":
+    adminHomePage(user, Data, ref)
     
     # if user.get('name') and user.get('name') != "nda":
