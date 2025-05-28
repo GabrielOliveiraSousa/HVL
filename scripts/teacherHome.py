@@ -1,13 +1,18 @@
 import customtkinter as ctk
-from scripts.listStudents import listStudents_Window
-from scripts.teacherListPage import teacherList
-from scripts.teacherGrades import TeacherGrades_Window
+from HVL.scripts.listStudents import listStudents_Window
+from HVL.scripts.teacherListPage import teacherList
+from HVL.scripts.teacherGrades import TeacherGrades_Window
 
 def teacherHomePage(ConnectedUsed, data, ref):
     
     ctk.set_appearance_mode("dark")
     ctk.set_default_color_theme("blue")
-    
+
+    '''
+    ========================
+    funções de exibição de usuarios
+    ========================
+    '''
     listData = [
         "Nome", "Idade", "Curso", "Nota"
     ]
@@ -19,13 +24,16 @@ def teacherHomePage(ConnectedUsed, data, ref):
         return str(val).strip().lower() == "true"
     
     def listStudents():
+        global ListNumber
+        ListNumber = 0
+
         newData = listStudents_Window(ref)
         if not newData or not isinstance(newData, dict):
             return
         if boolVerify(newData["student"]):
-            ctk.CTkLabel(Output_Frame, text=newData["full_name"]).grid(row=ListNumber+1, column=0, padx=60, pady=5)
-            ctk.CTkLabel(Output_Frame, text=newData["date_of_birth"]).grid(row=ListNumber+1, column=1, padx=30, pady=5)
-            ctk.CTkLabel(Output_Frame, text=newData["gender"]).grid(row=ListNumber+1, column=2, padx=30, pady=5)
+            ctk.CTkLabel(list_frame, text=newData["full_name"]).grid(row=ListNumber+1, column=0, padx=60, pady=5)
+            ctk.CTkLabel(list_frame, text=newData["date_of_birth"]).grid(row=ListNumber+1, column=1, padx=30, pady=5)
+            ctk.CTkLabel(list_frame, text=newData["gender"]).grid(row=ListNumber+1, column=2, padx=30, pady=5)
         # else:
         #     input("no students registered, would you like to register one? y/n ")
         #     if input("y"):
@@ -33,10 +41,17 @@ def teacherHomePage(ConnectedUsed, data, ref):
         #     else:
         #         return
 
+<<<<<<< HEAD
     # def goToStudents():
     #     btn_listStudents = ctk.CTkButton(root, text="Listar Alunos", command=listStudents, fg_color="#025604", hover_color="#027506", font=('Arial',12))
     #     btn_send.grid(row=0, column=1, padx=10)
     #     root.destroy()
+=======
+    def goToStudents():
+        btn_listStudents = ctk.CTkButton(root, text="Listar Alunos", command=listStudents, fg_color="#025604", hover_color="#027506", font=('Arial',12))
+        #btn_send.grid(row=0, column=1, padx=10)
+        root.destroy()
+>>>>>>> acc116666762da2854bda4fe190087a59b7d0683
         
         
         
