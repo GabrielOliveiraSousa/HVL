@@ -45,10 +45,10 @@ user = Connect(authData)
 
 # Open the homepage 
 if user.get('name'):
-    teacherHomePage(user, Data, ref)
+    adminHomePage(user, Data, ref)
 elif user.get('role') == "teacher":
     teacherHomePage(user, Data, ref)
 elif user.get('role') == "student":
-    studentHomePage(user,Data, ref)
+    studentHomePageu(ser,Data, ref)
     
     # if user.get('name') and user.get('name') != "nda":

@@ -85,8 +85,8 @@ def teacherList():
     btn4.grid()
 
   def btn2_action():
+    root.destroy
     print("Voltando")
-    root.destroy()
 
   def btn3_action():
     print("Notas Atualizadas")

@@ -12,7 +12,7 @@ def teacherHomePage(ConnectedUsed, data, ref):
         "Nome", "Idade", "Curso", "Nota"
     ]
     
-    # Não tenho ideia se lsitStudents() e goToSTudents() fazem algo aqui - Hostins Vitor
+
     
     
     def boolVerify(val):
@@ -33,10 +33,10 @@ def teacherHomePage(ConnectedUsed, data, ref):
         #     else:
         #         return
 
-    def goToStudents():
-        btn_listStudents = ctk.CTkButton(root, text="Listar Alunos", command=listStudents, fg_color="#025604", hover_color="#027506", font=('Arial',12))
-        btn_send.grid(row=0, column=1, padx=10)
-        root.destroy()
+    # def goToStudents():
+    #     btn_listStudents = ctk.CTkButton(root, text="Listar Alunos", command=listStudents, fg_color="#025604", hover_color="#027506", font=('Arial',12))
+    #     btn_send.grid(row=0, column=1, padx=10)
+    #     root.destroy()
         
         
         
@@ -54,7 +54,7 @@ def teacherHomePage(ConnectedUsed, data, ref):
         print("Botão 1 clicado")
 
     def btn2_action():
-        TeacherGrades_Window(listStudents(), ref)
+        TeacherGrades_Window(ref)
         print("Botão 2 clicado")
 
     def btn3_action():

@@ -146,27 +146,26 @@ def TeacherGrades_Window(student_data, ref):
     
     return root
 
-'''
-comando para testar a tela
+
 
 if __name__ == "__main__":
     app = ctk.CTk()
     app.withdraw()
     
     aluno_exemplo = {
-        "id": "123",
-        "ra": "20230001",
-        "full_name": "João da Silva",
-        "course": "Engenharia",
-        "grades": {
-            "prova_1": {"grade": 7.5, "weight": 30},
-            "prova_2": {"grade": 8.0, "weight": 30},
-            "Prova_3": {"grade": 0, "weight": 0},
-            "Prova_4": {"grade": 0, "weight": 0}
-        }
+        'full_name': name,
+        'date_of_birth': birthDate,
+        'student': student,
+        'grades': {
+            'grade1': grade1,
+            'grade2': grade2,
+            'grade3': grade3,
+            'grade4': grade4,  
+        },
+        'course': course,
+        'RA': RA
     }
     
     TeacherGrades_Window(aluno_exemplo, None)
     app.mainloop()
-
-    '''
+    
